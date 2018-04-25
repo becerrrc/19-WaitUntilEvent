@@ -482,16 +482,14 @@ def wait_for_sum_of_cubes(x):
     # ------------------------------------------------------------------
     count = 0
     n = 1
+    if x < 1:
+        return 1
     while True:
-        n = n + 1
-        if (n**3) <= x:
-            count = count + 1
-
-        if x < 1:
-            return 1
-        if (n**3) > x:
+        count = count + (n**3)
+        if count > x:
             break
-    return count
+        n = n + 1
+    return n
 
 
 # ----------------------------------------------------------------------
